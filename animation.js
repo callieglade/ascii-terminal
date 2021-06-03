@@ -16,8 +16,7 @@ Supposedly CSS animation is an option too but JS makes more sense for manipulati
 
 var cursor_element = document.getElementsByClassName("has-cursor");
 
-function blinkCursor(cursor_element) { // assumes 1 has-cursor element in document
-    var e = cursor_element;
+function blinkCursor(e) { // assumes 1 has-cursor element in document
     var text = e.innerHTML;
     var cursor = "_";
     var on = false;
@@ -29,3 +28,5 @@ function blinkCursor(cursor_element) { // assumes 1 has-cursor element in docume
         var on = false;
     }
 }
+
+var hasCursorID = setInterval(blinkCursor(cursor_element), 400);
