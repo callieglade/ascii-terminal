@@ -4,5 +4,9 @@ body {
 
 .terminal {
     color: #d4d4d4;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+}
+
+div.section {
+    color: #48d59
 }
