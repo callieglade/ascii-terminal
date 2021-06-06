@@ -22,19 +22,21 @@ function Terminal(element) {
 }
 
 function Cursor(element) {
-    this.text = element.innerHTML;
-    this.cursor = "_";
-    this.on = false;
-    this.blinkCursor = function(element) { // assumes 1 has-cursor element in document
-        if (on === false) {
-            element.innerHTML = text + cursor;
-            var on = true;
-        } else {
-            element.innerHTML = text - cursor;
-            var on = false;
-        }
+    this.element = element;
+    this.text =    element.innerHTML;
+    this.cursor =  "_";
+    this.on =      false;
+}
+
+Cursor.prototype.blinkCursor = function(element) { // assumes 1 has-cursor element in document
+    if (this.on === false) {
+        element.innerHTML = this.text + this.cursor;
+        this.on = true;
+    } else {
+        element.innerHTML = this.text - this.cursor;
+        this.on = false;
     }
 }
 const cursor = new Cursor(document.getElementsByClassName("has-cursor")); // assumes 1 has-cursor element in document
 
-var hasCursorID = setInterval(cursor.blinkCursor, 400);
+window.setInterval(cursor.blinkCursor, 400);
