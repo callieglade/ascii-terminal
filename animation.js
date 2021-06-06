@@ -14,6 +14,12 @@ Supposedly CSS animation is an option too but JS makes more sense for manipulati
 
 */
 
+function Terminal(element) {
+    // This will eventually be the text renderer for any Terminal windows.
+    this.rows =       0; // vertical lines
+    this.columns =    0; // number of columns in the terminal window
+    this.activeLine = 0; // the # line the renderer is on
+}
 var cursor_element = document.getElementsByClassName("has-cursor");
 
 function blinkCursor(e) { // assumes 1 has-cursor element in document
