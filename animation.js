@@ -16,23 +16,25 @@ Supposedly CSS animation is an option too but JS makes more sense for manipulati
 
 function Terminal(element) {
     // This will eventually be the text renderer for any Terminal windows.
-    this.rows =       0; // vertical lines
-    this.columns =    0; // number of columns in the terminal window
-    this.activeLine = 0; // the # line the renderer is on
+    this.rows =     0; // vertical lines
+    this.columns =  0; // number of columns in the terminal window
+    this.position = 0; // the # line the renderer is on
 }
-var cursor_element = document.getElementsByClassName("has-cursor");
 
-function blinkCursor(e) { // assumes 1 has-cursor element in document
-    var text = e.innerHTML;
-    var cursor = "_";
-    var on = false;
-    if (on === false) {
-        e.innerHTML = text + cursor;
-        var on = true;
-    } else {
-        e.innerHTML = text - cursor;
-        var on = false;
+function Cursor(element) {
+    this.text = element.innerHTML;
+    this.cursor = "_";
+    this.on = false;
+    this.blinkCursor = function(element) { // assumes 1 has-cursor element in document
+        if (on === false) {
+            element.innerHTML = text + cursor;
+            var on = true;
+        } else {
+            element.innerHTML = text - cursor;
+            var on = false;
+        }
     }
 }
+const cursor = new Cursor(document.getElementsByClassName("has-cursor")); // assumes 1 has-cursor element in document
 
-var hasCursorID = setInterval(blinkCursor(cursor_element), 400);
+var hasCursorID = setInterval(cursor.blinkCursor, 400);
