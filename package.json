@@ -1,0 +1,19 @@
+{
+  "name": "ascii-terminal",
+  "version": "1.0.0",
+  "description": "Terminal emulator with some ascii and animation, in the browser! Does not connect to anything. Inspired by the recent redesign of oxide.computer.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/callieglade/ascii-terminal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/callieglade/ascii-terminal/issues"
+  },
+  "homepage": "https://github.com/callieglade/ascii-terminal#readme"
+}
